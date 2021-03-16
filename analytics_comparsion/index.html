@@ -1,0 +1,805 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Flank is a massively parallel Android and iOS test runner for Firebase Test Lab.">
+      
+      
+      
+      
+        <link rel="canonical" href="https://flank.github.io/flank/analytics_comparsion/">
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.0.6">
+    
+    
+      
+        <title>Analytics - Flank</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.2c0c5eaf.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.7fa14f5b.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+      
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#analytics" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Flank" class="md-header__button md-logo" aria-label="Flank" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Flank
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Analytics
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="md-header__options">
+      
+    </div>
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/Flank/flank/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    flank
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Flank" class="md-nav__button md-logo" aria-label="Flank" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Flank
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/Flank/flank/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    flank
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../flank_vision/" class="md-nav__link">
+        Vision
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../test_sharding/" class="md-nav__link">
+        Sharding
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../smart_flank/" class="md-nav__link">
+        Smart Flank
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../building_updating_flank/" class="md-nav__link">
+        Building & updating Flank
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../windows_wsl_guide/" class="md-nav__link">
+        Windows WSL
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cucumber_support/" class="md-nav__link">
+        Cucumber
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" >
+      
+      <label class="md-nav__link" for="__nav_8">
+        Contribution
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Contribution" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          Contribution
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pr_titles/" class="md-nav__link">
+        Pull request
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" type="checkbox" id="__nav_9" >
+      
+      <label class="md-nav__link" for="__nav_9">
+        Development
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Development" data-md-level="1">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          Development
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../onboarding/1_environment_setup/" class="md-nav__link">
+        Environment setup
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../onboarding/2_contribution/" class="md-nav__link">
+        Contribution
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../onboarding/3_estimation/" class="md-nav__link">
+        Estimation
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../onboarding/4_buddy_system/" class="md-nav__link">
+        Buddy system
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../onboarding/5_code_review/" class="md-nav__link">
+        Code review
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../test_artifacts/" class="md-nav__link">
+        Test artifacts
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../client_generation/" class="md-nav__link">
+        Client generation
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dependencies_update_process/" class="md-nav__link">
+        Dependencies update
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../flank_secrets/" class="md-nav__link">
+        Secrets
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../release_process/" class="md-nav__link">
+        Releasing
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../binaries_used_in_flank_io_testing.md" class="md-nav__link">
+        Binaries for Flank's iOS
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#tools-choosing" class="md-nav__link">
+    Tools choosing
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#poc-mixpanel" class="md-nav__link">
+    POC Mixpanel
+  </a>
+  
+    <nav class="md-nav" aria-label="POC Mixpanel">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#scenario" class="md-nav__link">
+    Scenario
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#results" class="md-nav__link">
+    Results
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pros" class="md-nav__link">
+    Pros
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#poc-segment" class="md-nav__link">
+    POC Segment
+  </a>
+  
+    <nav class="md-nav" aria-label="POC Segment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#scenario_1" class="md-nav__link">
+    Scenario
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#usage-in-flank" class="md-nav__link">
+    Usage in Flank
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#results_1" class="md-nav__link">
+    Results
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pros_1" class="md-nav__link">
+    Pros
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cons" class="md-nav__link">
+    Cons
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#decision-mixpanel-vs-segment" class="md-nav__link">
+    Decision MixPanel vs Segment
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/Flank/flank/edit/master/docs/analytics_comparsion.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                <h1 id="analytics">Analytics</h1>
+<p>To optimize the user experience and make a proper decision about features supported by Flank there is a need to collect
+data about usage of Flank.</p>
+<h2 id="tools-choosing">Tools choosing</h2>
+<p>It was suggested to use Firebase/Google analytics because Flank is ultimately a Firebase integration (for test lab).
+Due to the lack of API and no easy method to use for server/desktop/native apps, it was decided to research for
+alternatives.
+After some research 2 tools were find as interesting solution for Flank use case:\
+- <a href="https://mixpanel.com/">MixPanel Analytics</a> with features:
+    - <a href="https://developer.mixpanel.com/docs/java">Java SDK</a>,
+    - dashboard
+    - many tools to analyze the usage of Flank
+    - free plan could be used by <a href="https://mixpanel.com/pricing/">100k users/month</a>
+- <a href="https://segment.com/pricing/?ref=nav">Segment by Twilio</a> with features:
+    - dashboard
+    - <a href="https://segment.com/docs/connections/sources/catalog/libraries/server/java/">Java SDK</a>
+    - dashboard
+    - free Plan Includes <a href="https://segment.com/pricing/?ref=nav">1,000 visitors/mo</a></p>
+<p>Other evaluated tools do not have good API, free plan, and/or dashboard, so as a team we decided to make a proof of concept
+for MixPanel and Segment</p>
+<h2 id="poc-mixpanel">POC Mixpanel</h2>
+<h3 id="scenario">Scenario</h3>
+<p>Send configuration provided by a user to MixPanel</p>
+<p>Sending events to Mixpanel is easy from developer perspective</p>
+<ol>
+<li>Add dependencu
+    <div class="highlight"><pre><span></span><code><span class="n">implementation</span><span class="p">(</span><span class="s">&quot;com.mixpanel:mixpanel-java:1.5.0&quot;</span><span class="p">)</span>
+</code></pre></div></li>
+<li>
+<p>Register user</p>
+<p><div class="highlight"><pre><span></span><code><span class="kd">val</span> <span class="nv">messageBuilder</span> <span class="o">=</span> <span class="n">MessageBuilder</span><span class="p">(</span><span class="n">PROJECT_TOKEN</span><span class="p">);</span>
+
+<span class="kd">val</span> <span class="nv">props</span> <span class="o">=</span> <span class="n">JSONObject</span><span class="p">()</span>
+<span class="n">props</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="s">&quot;name&quot;</span><span class="p">,</span> <span class="n">args</span><span class="p">.</span><span class="na">project</span><span class="p">)</span> <span class="c1">//set name as project id to easiest identification on users list</span>
+<span class="kd">val</span> <span class="nv">update</span> <span class="o">=</span> <span class="n">messageBuilder</span><span class="p">.</span><span class="na">set</span><span class="p">(</span><span class="n">project</span><span class="p">,</span> <span class="n">props</span><span class="p">)</span>
+
+<span class="c1">// Send the update to mixpanel</span>
+<span class="kd">val</span> <span class="nv">mixpanel</span> <span class="o">=</span> <span class="n">MixpanelAPI</span><span class="p">()</span>
+<span class="n">mixpanel</span><span class="p">.</span><span class="na">sendMessage</span><span class="p">(</span><span class="n">update</span><span class="p">)</span>
+</code></pre></div>
+1. Send event</p>
+</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="kd">val</span> <span class="nv">messageBuilder</span> <span class="o">=</span> <span class="n">MessageBuilder</span><span class="p">(</span><span class="n">PROJECT_TOKEN</span><span class="p">)</span>
+
+<span class="c1">// You can send properties along with events</span>
+<span class="kd">val</span> <span class="nv">props</span> <span class="o">=</span>  <span class="n">JSONObject</span><span class="p">()</span>
+<span class="n">props</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="s">&quot;type&quot;</span><span class="p">,</span> <span class="s">&quot;gameloop&quot;</span><span class="p">)</span>
+<span class="n">props</span><span class="p">.</span><span class="na">put</span><span class="p">(</span><span class="s">&quot;outputStyle&quot;</span><span class="p">,</span> <span class="s">&quot;single&quot;</span><span class="p">)</span>
+
+<span class="kd">val</span> <span class="nv">configurationEvent</span> <span class="o">=</span>
+    <span class="n">messageBuilder</span><span class="p">.</span><span class="na">event</span><span class="p">(</span><span class="n">distinctId</span><span class="p">,</span> <span class="s">&quot;configuration&quot;</span><span class="p">,</span> <span class="n">props</span><span class="p">)</span>
+
+<span class="kd">val</span> <span class="nv">api</span> <span class="o">=</span> <span class="n">MixpanelAPI</span><span class="p">()</span>
+
+<span class="n">api</span><span class="p">.</span><span class="na">sendMessage</span><span class="p">(</span><span class="n">configurationEvent</span><span class="p">)</span>
+</code></pre></div>
+<p>You could find working code <a href="https://github.com/Flank/flank/tree/1460-mix-panel-poc">here</a></p>
+<h3 id="results">Results</h3>
+<p>Configuration and sending events is easy. Mixpanel dashboard is advanced and probably meets our requirements. 
+We could send all changed parameters by one event or send changed parameters one by one.</p>
+<h3 id="pros">Pros</h3>
+<ul>
+<li>easy to use</li>
+<li>standalone</li>
+<li>easy to configure</li>
+</ul>
+<h2 id="poc-segment">POC Segment</h2>
+<h3 id="scenario_1">Scenario</h3>
+<p>Send configuration provided by a user to Segment.</p>
+<h3 id="description">Description</h3>
+<p>During making POC Segment appears to be not a standalone solution. It is just a tunnel to map and send data to other destination(s).
+A destination for this proof of concept was Google Analytics.</p>
+<h3 id="usage-in-flank">Usage in Flank</h3>
+<p>Sending events to Segment is super easy from developer perspective
+1. Add dependency
+   <div class="highlight"><pre><span></span><code> <span class="n">implementation</span><span class="p">(</span><span class="s">&quot;com.segment.analytics.java:analytics:2.1.1&quot;</span><span class="p">)</span>
+</code></pre></div>
+1. Create instance of Analytics
+   <div class="highlight"><pre><span></span><code>     <span class="kd">private</span> <span class="kd">val</span> <span class="nv">analytics</span> <span class="o">=</span> <span class="n">Analytics</span><span class="p">.</span><span class="na">builder</span><span class="p">(</span><span class="s">&quot;WRITE KEY&quot;</span><span class="p">)</span> <span class="c1">// could be found on Segment source configuration</span>
+         <span class="p">.</span><span class="na">build</span><span class="p">()</span>
+</code></pre></div>
+1. Enqueue event with map properties
+   <div class="highlight"><pre><span></span><code>     <span class="n">analytics</span><span class="p">.</span><span class="na">enqueue</span><span class="p">(</span>
+         <span class="n">TrackMessage</span><span class="p">.</span><span class="na">builder</span><span class="p">(</span><span class="s">&quot;EVENT NAME&quot;</span><span class="p">)</span> <span class="c1">// event name</span>
+             <span class="p">.</span><span class="na">userId</span><span class="p">(</span><span class="s">&quot;USER ID&quot;</span><span class="p">)</span> <span class="c1">// user id for indentification purpose</span>
+             <span class="p">.</span><span class="na">properties</span><span class="p">(</span><span class="n">configurationProperties</span><span class="p">)</span> <span class="c1">// properties Map&lt;String, Any&gt;</span>
+     <span class="p">)</span>
+</code></pre></div>
+1. Flush events to make sure that they will be sent
+   <div class="highlight"><pre><span></span><code><span class="n">analytics</span><span class="p">.</span><span class="na">flush</span><span class="p">()</span>
+</code></pre></div></p>
+<h3 id="results_1">Results</h3>
+<p>The destination configuration was very complicated. It was not well described on Segment site.
+Segment needs Google Tracking ID for sending events to them, however to have it, <a href="https://support.google.com/analytics/answer/7372977?hl=en">you must
+use an old version of Google Analytics(Universal) which is not so easy to find, new Google Analytics does not use this
+property</a> and Segment does not work with the latest version of
+Google Analytics.
+After configuring Segment and Google Analytics (Universal old version) events are received by the Google tool. However, data are
+not readable and could not be analyzed. This tool is mostly used for websites and does not allow querying properties or
+custom events. Maybe this is the fault of Segment integration or Flank specific use case, but this tool does not work properly with Google Analytics.
+Other destinations are not worth to be a consideration, because it is better to use standalone versions of them.</p>
+<h3 id="pros_1">Pros</h3>
+<ul>
+<li>easy to use</li>
+</ul>
+<h3 id="cons">Cons</h3>
+<ul>
+<li>it is not standalone (needs additional tools)</li>
+<li>configuration of destinations is not easy, there is not enough information for it</li>
+<li>implementation force user to use an older version of the end solution (Google Analytics)</li>
+</ul>
+<h2 id="decision-mixpanel-vs-segment">Decision MixPanel vs Segment</h2>
+<p>Based on Flank needs it was decided that MixPanel will deliver the best experience to Team. Segment is not a standalone tool and its configuration is painful, so it is better to stick to MixPanel which provides easy out of the box integration and met all criteria created by Flank team.
+The work on analytics will be continue in nearest future. Flank team should consider which use cases are needed for analytics as entry point for further development of it in Flank.</p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../assets/javascripts/workers/search.fb4a9340.min.js", "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.a1c7c35e.min.js"></script>
+      
+    
+  </body>
+</html>

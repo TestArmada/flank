@@ -1,0 +1,824 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Flank is a massively parallel Android and iOS test runner for Firebase Test Lab.">
+      
+      
+      
+      
+        <link rel="canonical" href="https://flank.github.io/flank/flank-output-investigation/gcloud_current_output/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.0.6">
+    
+    
+      
+        <title>Gcloud output - Flank</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.2c0c5eaf.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.7fa14f5b.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+      
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#gcloud-output" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Flank" class="md-header__button md-logo" aria-label="Flank" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Flank
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Gcloud output
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="md-header__options">
+      
+    </div>
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/Flank/flank/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    flank
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Flank" class="md-nav__button md-logo" aria-label="Flank" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Flank
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/Flank/flank/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    flank
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../flank_vision/" class="md-nav__link">
+        Vision
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../test_sharding/" class="md-nav__link">
+        Sharding
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../smart_flank/" class="md-nav__link">
+        Smart Flank
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../building_updating_flank/" class="md-nav__link">
+        Building & updating Flank
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../windows_wsl_guide/" class="md-nav__link">
+        Windows WSL
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cucumber_support/" class="md-nav__link">
+        Cucumber
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" >
+      
+      <label class="md-nav__link" for="__nav_8">
+        Contribution
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Contribution" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          Contribution
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pr_titles/" class="md-nav__link">
+        Pull request
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" type="checkbox" id="__nav_9" >
+      
+      <label class="md-nav__link" for="__nav_9">
+        Development
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Development" data-md-level="1">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          Development
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../onboarding/1_environment_setup/" class="md-nav__link">
+        Environment setup
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../onboarding/2_contribution/" class="md-nav__link">
+        Contribution
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../onboarding/3_estimation/" class="md-nav__link">
+        Estimation
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../onboarding/4_buddy_system/" class="md-nav__link">
+        Buddy system
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../onboarding/5_code_review/" class="md-nav__link">
+        Code review
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../test_artifacts/" class="md-nav__link">
+        Test artifacts
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../client_generation/" class="md-nav__link">
+        Client generation
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dependencies_update_process/" class="md-nav__link">
+        Dependencies update
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../flank_secrets/" class="md-nav__link">
+        Secrets
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../release_process/" class="md-nav__link">
+        Releasing
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../binaries_used_in_flank_io_testing.md" class="md-nav__link">
+        Binaries for Flank's iOS
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#android" class="md-nav__link">
+    Android
+  </a>
+  
+    <nav class="md-nav" aria-label="Android">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#welcome-section" class="md-nav__link">
+    Welcome section
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#upload-info" class="md-nav__link">
+    Upload info
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#storage-information" class="md-nav__link">
+    Storage information
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#info-before-running-test" class="md-nav__link">
+    Info before running test
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-status" class="md-nav__link">
+    Test status
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#completion-info" class="md-nav__link">
+    Completion info
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#results" class="md-nav__link">
+    Results
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#survey-at-the-end" class="md-nav__link">
+    Survey at the end
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ios" class="md-nav__link">
+    iOS
+  </a>
+  
+    <nav class="md-nav" aria-label="iOS">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#welcome-section_1" class="md-nav__link">
+    Welcome section
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#upload-info_1" class="md-nav__link">
+    Upload info
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#storage-information_1" class="md-nav__link">
+    Storage information
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#info-before-running-test_1" class="md-nav__link">
+    Info before running test
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-status_1" class="md-nav__link">
+    Test status
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#completion-info_1" class="md-nav__link">
+    Completion info
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#results_1" class="md-nav__link">
+    Results
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/Flank/flank/edit/master/docs/flank-output-investigation/gcloud_current_output.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                <h1 id="gcloud-output">Gcloud output</h1>
+<h2 id="android">Android</h2>
+<h3 id="welcome-section">Welcome section</h3>
+<div class="highlight"><pre><span></span><code>Have questions, feedback, or issues? Get support by visiting:
+  https://firebase.google.com/support/
+</code></pre></div>
+<h3 id="upload-info">Upload info</h3>
+<div class="highlight"><pre><span></span><code>Uploading <span class="o">[</span>../test_projects/android/apks/app-debug.apk<span class="o">]</span> to Firebase Test Lab...
+Uploading <span class="o">[</span>../test_projects/android/apks/app-debug-androidTest.apk<span class="o">]</span> to Firebase Test Lab...
+</code></pre></div>
+<h3 id="storage-information">Storage information</h3>
+<div class="highlight"><pre><span></span><code>Raw results will be stored <span class="k">in</span> your GCS bucket at <span class="o">[</span>https://console.developers.google.com/storage/browser/test-lab-v9cn46bb990nx-kz69ymd4nm9aq/2021-02-28_19:08:02.351035_LadZ/<span class="o">]</span>
+</code></pre></div>
+<h3 id="info-before-running-test">Info before running test</h3>
+<div class="highlight"><pre><span></span><code>Test [matrix-1uohkjt5rsr28] has been created in the Google Cloud.
+Firebase Test Lab will execute your instrumentation test on 1 device(s).
+Creating individual test executions...done.   
+</code></pre></div>
+<h3 id="test-status">Test status</h3>
+<div class="highlight"><pre><span></span><code>Test results will be streamed to <span class="o">[</span>https://console.firebase.google.com/project/flank-open-source/testlab/histories/bh.bf178d418be9d33e/matrices/4823249401837879607<span class="o">]</span>.
+<span class="m">19</span>:08:18 Test is Pending
+<span class="m">19</span>:08:46 Starting attempt <span class="m">1</span>.
+<span class="m">19</span>:08:46 Started logcat recording.
+<span class="m">19</span>:08:46 Test is Running
+<span class="m">19</span>:08:53 Started crash monitoring.
+<span class="m">19</span>:08:53 Preparing device.
+<span class="m">19</span>:09:00 Logging <span class="k">in</span> to Google account on device.
+<span class="m">19</span>:09:06 Installing apps.
+<span class="m">19</span>:09:06 Retrieving Pre-Test Package Stats information from the device.
+<span class="m">19</span>:09:06 Retrieving Performance Environment information from the device.
+<span class="m">19</span>:09:06 Started crash detection.
+<span class="m">19</span>:09:06 Started Out of memory detection
+<span class="m">19</span>:09:06 Started performance monitoring.
+<span class="m">19</span>:09:06 Started video recording.
+<span class="m">19</span>:09:06 Starting instrumentation test.
+<span class="m">19</span>:09:06 Completed instrumentation test.
+<span class="m">19</span>:09:13 Stopped performance monitoring.
+<span class="m">19</span>:09:13 Retrieving Post-test Package Stats information from the device.
+<span class="m">19</span>:09:13 Logging out of Google account on device.
+<span class="m">19</span>:09:20 Stopped crash monitoring.
+<span class="m">19</span>:09:20 Stopped logcat recording.
+<span class="m">19</span>:09:40 Done. Test <span class="nb">time</span> <span class="o">=</span> <span class="m">1</span> <span class="o">(</span>secs<span class="o">)</span>
+<span class="m">19</span>:09:40 Starting results processing. Attempt: <span class="m">1</span>
+<span class="m">19</span>:09:47 Completed results processing. Time <span class="nv">taken</span> <span class="o">=</span> <span class="m">4</span> <span class="o">(</span>secs<span class="o">)</span>
+<span class="m">19</span>:09:47 Test is Finished
+</code></pre></div>
+<h3 id="completion-info">Completion info</h3>
+<div class="highlight"><pre><span></span><code>Instrumentation testing complete.
+</code></pre></div>
+<h3 id="results">Results</h3>
+<div class="highlight"><pre><span></span><code>More details are available at <span class="o">[</span>https://console.firebase.google.com/project/flank-open-source/testlab/histories/bh.bf178d418be9d33e/matrices/4823249401837879607<span class="o">]</span>.
+┌─────────┬────────────────────────┬─────────────────────┐
+│ OUTCOME │    TEST_AXIS_VALUE     │     TEST_DETAILS    │
+├─────────┼────────────────────────┼─────────────────────┤
+│ Passed  │ walleye-27-en-portrait │ <span class="m">1</span> <span class="nb">test</span> cases passed │
+└─────────┴────────────────────────┴─────────────────────┘
+</code></pre></div>
+<h3 id="survey-at-the-end">Survey at the end</h3>
+<div class="highlight"><pre><span></span><code>To take a quick anonymous survey, run:
+  $ gcloud survey
+</code></pre></div>
+<h2 id="ios">iOS</h2>
+<h3 id="welcome-section_1">Welcome section</h3>
+<div class="highlight"><pre><span></span><code>Have questions, feedback, or issues? Get support by emailing:
+  ftl-ios-feedback@google.com
+</code></pre></div>
+<h3 id="upload-info_1">Upload info</h3>
+<div class="highlight"><pre><span></span><code>Uploading <span class="o">[</span>./src/test/kotlin/ftl/fixtures/tmp/ios/EarlGreyExample/EarlGreyExample.zip<span class="o">]</span> to Firebase Test Lab...
+Uploading <span class="o">[</span>./src/test/kotlin/ftl/fixtures/tmp/ios/EarlGreyExample/EarlGreyExampleSwiftTests.xctestrun<span class="o">]</span> to Firebase Test Lab...
+Raw results will be stored <span class="k">in</span> your GCS bucket at <span class="o">[</span>https://console.developers.google.com/storage/browser/test-lab-v9cn46bb990nx-kz69ymd4nm9aq/2021-02-28_19:15:20.392870_nuvf/<span class="o">]</span>
+</code></pre></div>
+<h3 id="storage-information_1">Storage information</h3>
+<div class="highlight"><pre><span></span><code>Test <span class="o">[</span>matrix-2k6ldtp789lvy<span class="o">]</span> has been created <span class="k">in</span> the Google Cloud.
+Firebase Test Lab will execute your xctest <span class="nb">test</span> on <span class="m">1</span> device<span class="o">(</span>s<span class="o">)</span>.
+Creating individual <span class="nb">test</span> executions...done. 
+</code></pre></div>
+<h3 id="info-before-running-test_1">Info before running test</h3>
+<div class="highlight"><pre><span></span><code>Test [matrix-2k6ldtp789lvy] has been created in the Google Cloud.
+Firebase Test Lab will execute your xctest test on 1 device(s).
+Creating individual test executions...done.   
+</code></pre></div>
+<h3 id="test-status_1">Test status</h3>
+<div class="highlight"><pre><span></span><code>Test results will be streamed to <span class="o">[</span>https://console.firebase.google.com/project/flank-open-source/testlab/histories/bh.a3b607c9bb6d0088/matrices/7622498233210161623<span class="o">]</span>.
+<span class="m">19</span>:15:49 Test is Pending
+<span class="m">19</span>:16:44 Starting attempt <span class="m">1</span>.
+<span class="m">19</span>:16:44 Checking Internet connection...
+<span class="m">19</span>:16:44 Test is Running
+<span class="m">19</span>:18:22 Internet connection stable!
+<span class="m">19</span>:18:41 Started device logs task
+<span class="m">19</span>:20:20 Stopped device logs task
+<span class="m">19</span>:20:39 Done. Test <span class="nb">time</span> <span class="o">=</span> <span class="m">62</span> <span class="o">(</span>secs<span class="o">)</span>
+<span class="m">19</span>:20:39 Starting results processing. Attempt: <span class="m">1</span>
+<span class="m">19</span>:20:45 Completed results processing. Time <span class="nv">taken</span> <span class="o">=</span> <span class="m">5</span> <span class="o">(</span>secs<span class="o">)</span>
+<span class="m">19</span>:20:45 Test is Finished
+</code></pre></div>
+<h3 id="completion-info_1">Completion info</h3>
+<div class="highlight"><pre><span></span><code>Xctest testing complete.
+</code></pre></div>
+<h3 id="results_1">Results</h3>
+<div class="highlight"><pre><span></span><code>More details are available at <span class="o">[</span>https://console.firebase.google.com/project/flank-open-source/testlab/histories/bh.a3b607c9bb6d0088/matrices/7622498233210161623<span class="o">]</span>.
+┌─────────┬──────────────────────────┬──────────────────────┐
+│ OUTCOME │     TEST_AXIS_VALUE      │     TEST_DETAILS     │
+├─────────┼──────────────────────────┼──────────────────────┤
+│ Passed  │ iphone8-11.2-en-portrait │ <span class="m">17</span> <span class="nb">test</span> cases passed │
+└─────────┴──────────────────────────┴──────────────────────┘
+</code></pre></div>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../../assets/javascripts/workers/search.fb4a9340.min.js", "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.a1c7c35e.min.js"></script>
+      
+    
+  </body>
+</html>
